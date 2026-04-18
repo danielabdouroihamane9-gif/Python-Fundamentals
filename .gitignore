@@ -1,0 +1,16 @@
+# Secrets and Credentials
+.env
+*.log
+secrets.json
+credentials.json
+*.pem
+*.key
+
+# Python specific (if applicable)
+__pycache__/
+.venv/
+.env
+
+# Editor settings
+.vscode/
+.idea/
