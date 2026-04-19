@@ -10,7 +10,7 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 *   **Control Flow:** Implemented complex `if-elif-else` logic and various loop structures.
 *   **Data Structures:** Hands-on experience with Lists, Sets, Tuples, and Dictionaries.
 *   **Practical Logic:** Built functional programs including calculators, converters, and generators.
-
+*   **Error Handling:** Implemented defensive programming using try, except, raise, assertion, and finally blocks.
 ---
 
 ## 📂 Project Structure
@@ -25,6 +25,7 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 | **10 - 14** | Strings | Operators, Indexing, and Format Specifiers |
 | **20 - 27** | Collections | Lists, Sets, Tuples, and Dictionaries |
 | **28 - 29** | System | Standard Library and File Handling |
+| **30** | Error Handling | Try/Except, Finally, and Exception types |
 
 ### 🛠️ Interactive Programs
 
