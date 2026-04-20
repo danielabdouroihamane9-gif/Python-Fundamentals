@@ -40,6 +40,7 @@ Detailed review notes are available in `.PDF` format for:
 *   PYTHON BASIC REVIEW
 *   LOOP AND SEQUENCE REVIEW
 *   DICTIONARY AND SET REVIEW
+*   ERROR HANDLING REVIEW
 
 ---
 
