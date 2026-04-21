@@ -1,5 +1,12 @@
 # Case Study: ISBN Validator Debugging
 
+## 🌟 Featured Project: ISBN Validator Case Study
+I recently completed a deep-dive into Python's error handling and checksum logic.
+
+- **The Challenge:** Debugging weighted sum algorithms and handling `ValueErrors`.
+- **The Skills:** `try/except` blocks, list comprehensions, and `enumerate()` logic.
+- **[View the Debugging Case Study →]([https://github.com](https://github.com/danielabdouroihamane9-gif/Python-Fundamentals/tree/main/ISBN%20Validator%20Exercise))**
+
 ## 🎯 Project Goal
 The objective was to fix a broken ISBN validator that handles both 10 and 13-digit formats. This exercise focused on identifying logic errors and implementing robust error handling.
 
