@@ -26,6 +26,7 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 | **20 - 27** | Collections | Lists, Sets, Tuples, and Dictionaries |
 | **28 - 29** | System | Standard Library and File Handling |
 | **30** | Error Handling | Try/Except, Finally, and Exception types |
+| **31** | Classes and Objects | Classes, Objects, and Constructors (__init__) |
 
 ### 🛠️ Interactive Programs
 
@@ -52,7 +53,7 @@ Detailed review notes are available in `.PDF` format for:
 
 ### 📈 Current Goal
 
-I am currently transitioning into Object-Oriented Programming (OOP) to build more scalable and modular applications. 🎯
+I am currently mastering Object-Oriented Programming (OOP), focusing on concepts like Inheritance, Polymorphism, and Encapsulation to build scalable applications. 🎯
 
 
 Created with commitment by Daniel Abdouroihamane Ibrahim Mhadji.
