@@ -151,3 +151,18 @@ my_cart.remove_item("Phone") # Remove an item from the cart
 print(my_cart.list_items()) # List all items in the cart using list_items() method. Output: ['Laptop', 'wireless mouse', 'Headphones']
 
 my_cart.remove_item("Tablet") # Try to remove an item that is not in the cart. Output: Tablet is not in the cart.
+
+
+# 4* Handling Attributes Dynamically: Allowing you to access, modify, or delete attributes using getattr(), setattr(), hasattr() and delattr() functions.
+#1   getattr(object, name, default): is used to retrieve the value of an attribute from an object. It takes three arguments: object, (string)attribute_name and a default value to return if the attribute does not exist.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person1 = Person("Alice", 30)
+
+attr_name = input("Enter the attribute name to retrieve: ")
+print(getattr(person1, attr_name, "Attribute not found"))   # If the user enters "name", output: Alice. If the user enters "age", output: 30. If the user enters an attribute that does not exist, output: Attribute not found.
+
