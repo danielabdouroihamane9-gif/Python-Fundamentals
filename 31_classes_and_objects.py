@@ -59,3 +59,39 @@ car_2 = Car("green", "Lamborghini Revuelto")
 print(car_1.describe()) # This car is a red Toyota Corolla
 print(car_2.describe()) # This car is a green Lamborghini Revuelto
 
+# 3*    Special Methods: are predefined methods in Python that have special names and are used to perform specific operations.
+#  In normally, Python data types already know how to perform operations like addition, subtraction, and string concatenation. 
+#               However, when we create our own classes, Python doesn't know how to handle things automatically.
+#               This is where special methods come in. They allow us to define how our objects should behave when we use certain operators on them.
+
+""" Some common special methods include:
+Arithmetic operations: In addition, __add__() is called, __sub__() for subtraction, __mul__() for multiplication, and __truediv__() for division.
+String operations: __add__() is called for concatenation, __mul__() for repetition, __format__() for formatting, __str__() and __repr__() for text conversion.
+Comparison operations: __eq__() is called for equality checks, __lt__() for less-than, __gt__() for greater-than.
+Iteration operations: __iter__() is called to return an iterator and __next__() to fetch the next item. """
+
+class Book:
+   def __init__(self, title, pages):    # Instance attributes: title and pages
+       self.title = title
+       self.pages = pages
+
+   def __len__(self):                   # special method __len__() is called when the built-in len() function is used on an object of the class. It should return the length of the object.
+       return self.pages
+
+   def __str__(self):           # special method __str__() is called when the built-in str() function is used on an object of the class. It should return a string representation of the object.    
+       return f"'{self.title}' has {self.pages} pages"
+
+   def __eq__(self, other):     # special method __eq__() is called when the equality operator (==) is used to compare two objects of the class. It should return True if the comparison is true and False otherwise.
+       return self.pages == other.pages
+  
+book1 = Book("Built Wealth Like a Boss", 420)       # Create an object of the Book class with the title "Built Wealth Like a Boss" and 420 pages
+book2 = Book("Be Your Own Start", 420)      # Create another object of the Book class with the title "Be Your Own Start" and 420 pages
+
+print(len(book1)) # Output: 420
+print(len(book2)) # Output: 420
+print(str(book1)) # Output: 'Built Wealth Like a Boss' has 420 pages
+print(str(book2)) # Output: 'Be Your Own Start' has 420 pages
+print(book1 == book2) # Output: True
+
+
+
