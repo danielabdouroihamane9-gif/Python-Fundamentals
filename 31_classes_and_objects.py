@@ -93,5 +93,61 @@ print(str(book1)) # Output: 'Built Wealth Like a Boss' has 420 pages
 print(str(book2)) # Output: 'Be Your Own Start' has 420 pages
 print(book1 == book2) # Output: True
 
+# Shopping Cart Example:
+""" 
+Add items to the cart                                       # Using normal methods
+Remove items from the cart                                  # Using normal methods
+Get the number of items in the cart                         # Using __len__() special method
+Check what items are in the cart                            # Using __iter__() special methods
+Check if a specific item is in the cart                     # Using __contains__() special method
+Return or display an item at a specific index in the cart   # Using __getitem__() special method
+"""
+class cart:
+    def __init__(self):
+        self.items = [] # Instance attribute: items, which is a list that will hold the items in the cart.
 
+    def add_item(self, item): # Method to add an item to the cart
+        self.items.append(item)
 
+    def remove_item(self, item): # Method to remove an item from the cart
+        if item in self.items:
+            self.items.remove(item)
+        else:
+            print(f"{item} is not in the cart.")
+    
+    def list_items(self): # Method to list all items in the cart
+        return self.items
+    
+    def __len__(self): # Special method to get the number of items in the cart
+        return len(self.items)
+
+    def __getitem__(self, index): # Speecial method to return an item at a specific index in the cart
+        return self.items[index]
+    
+    def __contains__(self, item): # Special method to check if a specific item is in the cart
+        return item in self.items
+    
+    def __iter__(self): # Special method to allow iteration over the items in the cart
+        return iter(self.items)
+    
+
+my_cart = cart() # Create an object of the cart class
+my_cart.add_item("Laptop") # Add items to the cart
+my_cart.add_item("Phone") # Add another item to the cart
+my_cart.add_item("wireless mouse") # Add another item to the cart
+my_cart.add_item("Headphones") # Add another item to the cart
+
+for item in my_cart: # Check what items are in the cart using iteration
+    print(item, end=", ") # Output: Laptop, Phone, wireless mouse, Headphones,
+
+print(len(my_cart)) # Get the number of items in the cart using __len__() special method. Output: 4
+print(my_cart[1]) # Return or display an item at a specific index in the cart using __getitem__() special method. Output: Phone
+
+print("Laptop" in my_cart) # Check if a specific item is in the cart using __contains__() special method. Output: True
+print("Tablet" in my_cart) # Check if a specific item is in the cart using __contains__() special method. Output: False
+
+my_cart.remove_item("Phone") # Remove an item from the cart
+
+print(my_cart.list_items()) # List all items in the cart using list_items() method. Output: ['Laptop', 'wireless mouse', 'Headphones']
+
+my_cart.remove_item("Tablet") # Try to remove an item that is not in the cart. Output: Tablet is not in the cart.
