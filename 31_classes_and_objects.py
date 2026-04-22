@@ -4,6 +4,12 @@
 #          Object: is an instance of a class, and it can have its own unique values for the attributes defined in the class.
 #          One class can create multiple objects, and each object can have different values for the attributes defined in the class.
 
+from logging import config
+
+
+from logging import config
+
+
 class Dog:                          # Define a class named Dog
     def __init__(self, name, age):  # The __init__ method is a special method that is called when an object is created from the class. It initializes the attributes of the object.
         self.name = name            # Attribute: name, age.  (self is a reference to the current instance of the class, and it is used to access the attributes and methods of the class.)
@@ -166,3 +172,20 @@ person1 = Person("Alice", 30)
 attr_name = input("Enter the attribute name to retrieve: ")
 print(getattr(person1, attr_name, "Attribute not found"))   # If the user enters "name", output: Alice. If the user enters "age", output: 30. If the user enters an attribute that does not exist, output: Attribute not found.
 
+#2   setattr(object, name, value): is used to set the value of an attribute on an object. It takes three arguments: object, (string)attribute_name and the value to set for the attribute.
+class Configuration:
+    pass
+# Data loaded at runtime (e.g., from a config or env file)
+settings_data = {
+    "server_url": "https://api.example.com",
+    "timeout_sec": 30,
+    "max_retries": 3
+} 
+config_obj = Configuration() # Create an object of the Configuration class
+
+# Dynamically set attributes using dictionary keys and values
+for attr_name, attr_value in settings_data.items():
+    setattr(config_obj, attr_name, attr_value)
+# Now config_obj has attributes server_url, timeout_sec, and max_retries with the corresponding values from settings_data
+print(config_obj.server_url) # Output: https://api.example.com  
+print(config_obj.timeout_sec) # Output: 30
