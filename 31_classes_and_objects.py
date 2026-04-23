@@ -187,5 +187,16 @@ config_obj = Configuration() # Create an object of the Configuration class
 for attr_name, attr_value in settings_data.items():
     setattr(config_obj, attr_name, attr_value)
 # Now config_obj has attributes server_url, timeout_sec, and max_retries with the corresponding values from settings_data
-print(config_obj.server_url) # Output: https://api.example.com  
+print(getattr(config_obj, "server_url")) # Output: https://api.example.com  
 print(config_obj.timeout_sec) # Output: 30
+
+#3   hasattr(object, name): is used to check if an object has a specific attribute. It takes two arguments: object and (string)attribute_name. It returns True if the attribute exists and False otherwise.
+required_attr = input("Enter the attribute name to check: ")
+if hasattr(config_obj, required_attr):
+    print(f"{required_attr} exists in config_obj with value: {getattr(config_obj, required_attr)}")
+else:
+    print(f"{required_attr} does not exist in config_obj.")
+
+print(hasattr(config_obj, "max_retries")) # Output: True
+print(hasattr(config_obj, required_attr)) # Output depends on user input
+
