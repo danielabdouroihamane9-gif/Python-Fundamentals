@@ -8,6 +8,7 @@ from logging import config
 
 
 from logging import config
+import token
 
 
 class Dog:                          # Define a class named Dog
@@ -174,14 +175,17 @@ print(getattr(person1, attr_name, "Attribute not found"))   # If the user enters
 
 #2   setattr(object, name, value): is used to set the value of an attribute on an object. It takes three arguments: object, (string)attribute_name and the value to set for the attribute.
 class Configuration:
-    pass
+    def __init__(self, user_id, token):
+        self.user_id = user_id
+        self.auth_token = token # sensitive
+        self.temp_counter = 0 # temporary
 # Data loaded at runtime (e.g., from a config or env file)
 settings_data = {
     "server_url": "https://api.example.com",
     "timeout_sec": 30,
     "max_retries": 3
 } 
-config_obj = Configuration() # Create an object of the Configuration class
+config_obj = Configuration("user123", "auth_token_456") # Create an object of the Configuration class
 
 # Dynamically set attributes using dictionary keys and values
 for attr_name, attr_value in settings_data.items():
@@ -200,3 +204,18 @@ else:
 print(hasattr(config_obj, "max_retries")) # Output: True
 print(hasattr(config_obj, required_attr)) # Output depends on user input
 
+#4   delattr(object, name): is used to delete an attribute from an object. It takes two arguments: object and (string)attribute_name. If the attribute exists, it will be removed from the object.
+delattr(config_obj, "timeout_sec") # Delete the timeout_sec attribute from config_obj
+print(hasattr(config_obj, "timeout_sec")) # Output: False
+
+attr_to_clean = ["auth_token", "temp_counter"] # List of attributes to clean up
+for attr in attr_to_clean:
+    if hasattr(config_obj, attr):
+        delattr(config_obj, attr) # Dynamically delete attributes from config_obj based on the list
+        print(f"{attr} has been deleted from config_obj.")  # Output: auth_token has been deleted from config_obj. temp_counter has been deleted from config_obj.
+
+#** Looping through dir() function to list all attributes remaining in config_obj after cleanup
+print("\nRemaining attributes in config_obj:")
+for attr in dir(config_obj):
+    if not attr.startswith("__") and not callable(getattr(config_obj, attr)): # Filter out special methods and callable attributes (methods) to list only the remaining attributes of config_obj
+        print(f"{attr}: {getattr(config_obj, attr)}") # Output: server_url: https://api.example.com max_retries: 3 user_id: user123
