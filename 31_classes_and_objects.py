@@ -181,7 +181,7 @@ class Configuration:
         self.temp_counter = 0 # temporary
 # Data loaded at runtime (e.g., from a config or env file)
 settings_data = {
-    "server_url": "https://api.example.com",
+    "server_url": "https://github.com/danielabdouroihamane9-gif",
     "timeout_sec": 30,
     "max_retries": 3
 } 
@@ -191,7 +191,7 @@ config_obj = Configuration("user123", "auth_token_456") # Create an object of th
 for attr_name, attr_value in settings_data.items():
     setattr(config_obj, attr_name, attr_value)
 # Now config_obj has attributes server_url, timeout_sec, and max_retries with the corresponding values from settings_data
-print(getattr(config_obj, "server_url")) # Output: https://api.example.com  
+print(getattr(config_obj, "server_url")) # Output: https://github.com/danielabdouroihamane9-gif
 print(config_obj.timeout_sec) # Output: 30
 
 #3   hasattr(object, name): is used to check if an object has a specific attribute. It takes two arguments: object and (string)attribute_name. It returns True if the attribute exists and False otherwise.
@@ -218,4 +218,4 @@ for attr in attr_to_clean:
 print("\nRemaining attributes in config_obj:")
 for attr in dir(config_obj):
     if not attr.startswith("__") and not callable(getattr(config_obj, attr)): # Filter out special methods and callable attributes (methods) to list only the remaining attributes of config_obj
-        print(f"{attr}: {getattr(config_obj, attr)}") # Output: server_url: https://api.example.com max_retries: 3 user_id: user123
+        print(f"{attr}: {getattr(config_obj, attr)}") # Output: server_url: https://github.com/danielabdouroihamane9-gif max_retries: 3 user_id: user123
