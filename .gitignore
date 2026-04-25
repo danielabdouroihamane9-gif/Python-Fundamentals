@@ -14,3 +14,7 @@ __pycache__/
 # Editor settings
 .vscode/
 .idea/
+
+# --- Sub-Repositories ---
+# Ignore the Budget App folder so it can have its own repo
+Budget-App/
