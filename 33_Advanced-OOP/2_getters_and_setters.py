@@ -18,4 +18,27 @@ class Circle:
         return 3.14 * (self._radius ** 2)
 radius = float(input("enter the radius of the circle: "))
 my_circle = Circle(radius)  # Create an instance of the Circle class with the radius provided by the user.
-print(f"The radius of the circle is: {my_circle.radius}")  # Access the radius using the getter method. 
+print(f"The radius of the circle is: {my_circle.radius}")  # Access the radius using the getter method.
+print(f"The area of the circle is: {my_circle.area}")      # Access the area using the getter method.
+
+#2* Create a setter by using the @<property_name>.setter decorator. This allows you to set the value of the private attribute.
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius   # Calling the setter method to set the radius when initializing the object.
+
+    @property
+    def radius(self):       # A getter to get the radius of the circle.
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):  # Setter method for setting the radius
+        if value <= 0:
+            raise ValueError("Radius must be a positive number")
+        self._radius = value
+
+my_circle = Circle(5)  # Create an instance of the Circle class with an initial radius of 5.
+print(f"Initial radius: {my_circle.radius}")  # Output: Initial radius: 5
+
+radius = float(input("Enter a new radius for the circle: "))
+my_circle.radius = radius  # Set a new radius using the setter method.
+print(f"Updated radius: {my_circle.radius}")  # Output: Updated radius: <entered_value>
