@@ -18,8 +18,12 @@ class Wallet:
        if 0 < amount <= self.__balance:
            self.__balance -= amount # Remove from the balance safely
 
-account = Wallet(100)
-print(account.__balance) # This will raise an AttributeError because __balance is private
+try:
+    account = Wallet(100)
+    # This line normally crashes the program
+    print(account.__balance) 
+except AttributeError:
+    print("Error: You cannot access '__balance' directly because it is private.")
 
 # To access the balance, we can create a method that returns it:
 class Wallet:
@@ -69,13 +73,34 @@ class Wallet:
 
    def get_balance(self):
        return self.__balance
-acct_one = Wallet()
-acct_one.deposit(5)
-print(acct_one.get_balance()) # Output: 5
 
-acct_one.deposit(53)
-print(acct_one.get_balance()) # Output: 58
+my_wallet = Wallet()
 
-acct_one.deposit(-10) # ValueError: Amount must be a positive number
-acct_one.withdraw(-20) # ValueError: Amount must be a positive number
-acct_one.withdraw(100) # ValueError: Insufficient funds
+while True:
+    print("----- Wallet Menu -----")
+    print("1. Deposit")
+    print("2. Withdraw")
+    print("3. Check Balance")
+    print("4. Exit")
+    choice = input("Select an option (1-4): ")
+
+    if choice == "4":
+        print("Exiting the wallet menu. Goodbye!")
+        break
+
+    try:
+        if choice in ["1", "2"]:
+            amount = float(input("Enter the amount: "))
+            if choice == "1":
+                my_wallet.deposit(amount)
+                print(f"Deposit successful ${amount}")
+            else:
+                my_wallet.withdraw(amount)
+                print(f"Withdrawal successful ${amount}")
+        if choice == "3":
+            print(f"Current balance: ${my_wallet.get_balance()}")
+        else:
+            print("Invalid choice. Please pick 1, 2, 3, or 4.")
+
+    except ValueError as e:
+        print(f"Error: {e}")
