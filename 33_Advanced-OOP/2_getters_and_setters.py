@@ -71,6 +71,7 @@ radius = float(input("Enter the radius of the circle: "))
 my_circle = Circle(radius)  # Create an instance of the Circle class with the radius provided
 print(f"Radius before deletion: {my_circle.radius}")  # Output: Radius before deletion: <entered_value>
 del my_circle.radius  # Delete the radius using the deleter method.
+
 try:
     print(my_circle.radius)  # Attempt to access the radius after deletion, which should raise an AttributeError.
 except AttributeError as e:
