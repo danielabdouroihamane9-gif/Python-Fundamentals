@@ -9,8 +9,8 @@ class Employee:
 
     def __init__(self, name, level):
         # Validate that 'name' and 'level' are of type 'str' 
-        if not (isinstance(name, str) and isinstance(level, str)):
-            raise TypeError("'name' and 'level' attribute must be of type 'str'.")
+        if not isinstance(level, str):
+            raise TypeError("'level' attribute must be of type 'str'.")
         # Validate that 'level' is one of the allowed values in the _base_salaries dictionary
         if level not in Employee._base_salaries:
             raise ValueError(f"Invalid value '{level}' for 'level' attribute.")
@@ -29,6 +29,12 @@ class Employee:
     def name(self):     # Getter method for the 'name' attribute, allowing access to the private attribute _name.
         return self._name
 
+    @name.setter
+    def name(self, new_name):
+        if not isinstance(new_name, str):
+            raise TypeError("'name' must be a string.")
+        self._name = new_name
+        print(f"'name' updated to '{self.name}'.")
 
     @property
     def level(self):    # Getter method for the 'level' attribute, allowing access to the private attribute _level.
