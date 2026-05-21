@@ -15,7 +15,7 @@ class Employee:
         if level not in Employee._base_salaries:
             raise ValueError(f"Invalid value '{level}' for 'level' attribute.")
         
-        self._name = name       
+        self.name = name       
         self._level = level
         self._salary = Employee._base_salaries[level]   # Set the salary based on the level using the class attribute _base_salaries
 
