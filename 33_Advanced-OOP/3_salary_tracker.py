@@ -7,16 +7,9 @@ class Employee:
         'senior': 4000,
     }
 
-    def __init__(self, name, level):
-        # Validate that 'name' and 'level' are of type 'str' 
-        if not isinstance(level, str):
-            raise TypeError("'level' attribute must be of type 'str'.")
-        # Validate that 'level' is one of the allowed values in the _base_salaries dictionary
-        if level not in Employee._base_salaries:
-            raise ValueError(f"Invalid value '{level}' for 'level' attribute.")
-        
+    def __init__(self, name, level): 
         self.name = name       
-        self._level = level
+        self.level = level
         self._salary = Employee._base_salaries[level]   # Set the salary based on the level using the class attribute _base_salaries
 
     def __str__(self):      # String representation of the Employee object, showing the name and level.
@@ -39,6 +32,14 @@ class Employee:
     @property
     def level(self):    # Getter method for the 'level' attribute, allowing access to the private attribute _level.
         return self._level
+
+    @level.setter
+    def level(self, new_level):
+        if not isinstance(new_level, str):
+            raise TypeError("'level' must be a string.")
+        if new_level not in Employee._base_salaries:
+            raise ValueError(f"Invalid value '{new_level}' for 'level' attribute.")
+        self._level = new_level
 
     @property
     def salary(self):   # Getter method for the 'salary' attribute, allowing access to the private attribute _salary.
