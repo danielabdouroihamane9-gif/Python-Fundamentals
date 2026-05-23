@@ -10,7 +10,7 @@ class Employee:
     def __init__(self, name, level): 
         self.name = name       
         self.level = level
-        self._salary = Employee._base_salaries[level]   # Set the salary based on the level using the class attribute _base_salaries
+        self.salary = Employee._base_salaries[level]   # Set the salary based on the level using the class attribute _base_salaries
 
     def __str__(self):      # String representation of the Employee object, showing the name and level.
         return f'{self.name}: {self.level}'
@@ -43,15 +43,27 @@ class Employee:
             raise ValueError(f"'{self.level}' is already the selected level.")
         if hasattr(self, '_level') and Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:    # Validate that the new level is not lower than the current level and raise a ValueError if it is.
             raise ValueError("Cannot change to lower level.")
-        
-        self._salary = Employee._base_salaries[new_level]  # Update the salary based on the new level using the class attribute _base_salaries
+        print(f"'{self.name}' promoted to '{new_level}'.")      
+
+        self.salary = Employee._base_salaries[new_level]  # Update the salary based on the new level using the class attribute _base_salaries
+        print(f"'{self.name}' promoted to '{new_level}'.")
         self._level = new_level # Update the private attribute _level with the new level.
 
     @property
     def salary(self):   # Getter method for the 'salary' attribute, allowing access to the private attribute _salary.
         return self._salary
+    
+    @salary.setter   # Setter method for the 'salary' attribute, allowing validation and updating of the private attribute _salary, as well as ensuring that the new salary is not lower than the minimum salary for the current level.
+    def salary(self, new_salary):   
+        if not isinstance(new_salary, (int, float)):    # Validate that the new salary is a number (either an integer or a float), and raise a TypeError if it is not.
+            raise TypeError("'salary' must be a number.")
+        if hasattr(self, '_level') and new_salary < Employee._base_salaries[self.level]:    # Validate that the new salary is not lower than the minimum salary for the current level, and raise a ValueError if it is.
+            raise ValueError(f'Salary must be higher than minimum salary ${Employee._base_salaries[self.level]}.')
+        self._salary = new_salary
+        print(f'Salary updated to ${self.salary}.')
 
 
 charlie_brown = Employee('Charlie Brown', 'trainee')
 print(charlie_brown)
 print(f'Base salary: ${charlie_brown.salary}')  # Output: Base salary: $1000
+charlie_brown.level = 'junior'  # Update level to junior, which should also update the salary to $2000
