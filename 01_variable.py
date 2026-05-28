@@ -1,4 +1,4 @@
-#2 VARIABLE: (string, integer, float and boolean)
+# 2 VARIABLE: (string, integer, float and boolean)
 
 # Strings
 first_name = "Daniel Abdouroihamane Ibrahim Mhadji"
@@ -11,14 +11,18 @@ print(f"My name is {first_name} and I like {food}, my email is {email}")
 age = 21
 quantity = 3
 num_of_students = 30
-print(f"You are {age} years old, You are buying {quantity}.\n Your class has {num_of_students} students")
+print(
+    f"You are {age} years old, You are buying {quantity}.\n Your class has {num_of_students} students"
+)
 
 
 # Float
 price = 10.99
 gpa = 3.14
 distance = 5.5
-print(f"You are selling ${price} per items in {distance} miles.\nYou got a grade of {gpa}.")
+print(
+    f"You are selling ${price} per items in {distance} miles.\nYou got a grade of {gpa}."
+)
 
 # Boolean
 is_student = True
@@ -32,7 +36,7 @@ if is_online:
 else:
     print("You are not online")
 
-''' Comment: '''
+""" Comment: """
 user_name = "Bro Code"
 year = 2024
 pi = 3.14
