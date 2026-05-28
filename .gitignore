@@ -10,10 +10,10 @@ credentials.json
 __pycache__/
 .venv/
 .env
-
 # Editor settings
 .vscode/
 .idea/
+.continue/
 
 # --- Sub-Repositories ---
 # Ignore the Budget App folder so it can have its own repo
