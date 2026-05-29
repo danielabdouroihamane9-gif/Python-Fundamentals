@@ -1,0 +1,16 @@
+{
+    "name": "Daniel",
+    "major": "Computer Science",
+    "current_semester": 4,
+    "is_enrolled": true,
+    "favorite_courses": [
+        "Programming 1",
+        "Database Systems",
+        "Software Engineering"
+    ],
+    "grades": {
+        "Python": "A",
+        "Calculus": "B+",
+        "Data Structures": "A-"
+    }
+}
