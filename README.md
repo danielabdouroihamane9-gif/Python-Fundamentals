@@ -29,6 +29,7 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 | **30** | Error Handling | Try/Except, Finally, and Exception types |
 | **31-32** | OOP | Classes, Objects, __init__, and __str__ |
 | **33** | Advanced-OOP | 4 pillars | Encapsulation, Inheritance, Abstraction and Polymorphism |
+| **34** | JSON_File | Serealize (dump), Deserealize (load) and convert Dict to json String (dumps), and Opposite (loads) |
 
 ### 🏗️ Object-Oriented Projects
 *   **Space Systems:** 32_planet_class_system.py — An interactive script using OOP to create and validate planetary data.
