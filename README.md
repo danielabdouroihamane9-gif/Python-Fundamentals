@@ -30,6 +30,7 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 | **31-32** | OOP | Classes, Objects, __init__, and __str__ |
 | **33** | Advanced-OOP | 4 pillars | Encapsulation, Inheritance, Abstraction and Polymorphism |
 | **34** | JSON_File | Serealize (dump), Deserealize (load) and convert Dict to json String (dumps), and Opposite (loads) |
+| **35** | Virtual environments | `venv`, `pip`, and `requirements.txt` |
 
 ### 🏗️ Object-Oriented Projects
 *   **Space Systems:** 32_planet_class_system.py — An interactive script using OOP to create and validate planetary data.
@@ -56,6 +57,29 @@ Detailed review notes are available in `.PDF` format for:
 1. Clone the repo: `git clone https://github.com`
 2. Navigate to the folder: `cd your-repo-name`
 3. Run a script: `python 32_planet_class_system.py`
+
+Optional (recommended): create and activate a virtual environment:
+
+Windows:
+```
+python -m venv venv
+venv\Scripts\activate
+```
+macOS / Linux:
+```
+python -m venv venv
+source venv/bin/activate
+```
+
+If the project has a `requirements.txt`, install dependencies:
+```
+pip install -r requirements.txt
+```
+
+Run a script, for example:
+```
+python 32_planet_class_system.py
+```
 
 
 ### 📈 Current Goal
