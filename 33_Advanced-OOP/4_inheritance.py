@@ -43,3 +43,31 @@ class Bird(Animal):
 
 tweety = Bird("Tweety", "Canary")
 print(tweety.sound())  # Tweety the Canary chirps!
+
+""" Example of Multiple Inheritance: a class can inherit from more than one parent class. 
+In this example, the FlyingFish class inherits from both Fish and Bird classes,
+allowing it to have characteristics of both."""
+
+
+class Fish:  # Parent class 1
+    def swim(self):
+        return "The fish is swimming"
+
+
+class Bird:  # Parent class 2
+    def fly(self):
+        return "I can fly!"
+
+
+class FlyingFish(Fish, Bird):  # Child class inheriting from both Fish and Bird
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        return f"{self.name} says blub!"
+
+
+nemo = FlyingFish("Nemo")
+print(nemo.swim())  # The fish is swimming
+print(nemo.fly())  # I can fly!
+print(nemo.sound())  # Nemo says blub!
