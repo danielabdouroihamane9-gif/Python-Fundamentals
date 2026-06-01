@@ -132,3 +132,66 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# ============================================================================
+# Example 3: Inheritance-based polymorphism with Animal subclasses
+# ============================================================================
+# Define a shared parent class with a generic sound() method.
+# Each subclass overrides sound() to provide its own implementation.
+# When we call sound() on an object, Python chooses the method of the
+# actual subclass instance at runtime.
+
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        """Default sound behavior for the base Animal class."""
+        return f"{self.name} makes a sound"
+
+
+class Dog(Animal):
+    def sound(self):
+        """Override sound() with Dog-specific behavior."""
+        return f"{self.name} barks: woof! woof!! woof!!!"
+
+
+class Cat(Animal):
+    def sound(self):
+        """Override sound() with Cat-specific behavior."""
+        return f"{self.name} meows: meow! meow!! meow!!!"
+
+
+class Bird(Animal):
+    def sound(self):
+        """Override sound() with Bird-specific behavior."""
+        return f"{self.name} tweets: tweet! tweet!! tweet!!!"
+
+
+# Create one instance of each subclass and call the shared method name.
+# The behavior changes because each class provides its own override.
+jack = Dog("Jack")
+whiskers = Cat("Whiskers")
+tweety = Bird("Tweety")
+
+print(jack.sound())  # Jack is a Dog, so Dog.sound() is executed.
+print(whiskers.sound())  # Whiskers is a Cat, so Cat.sound() is executed.
+print(tweety.sound())  # Tweety is a Bird, so Bird.sound() is executed.
+
+# You can still use the base class directly, which calls the generic method.
+print(Animal("Generic Animal").sound())  # Generic Animal makes a sound
+
+# ============================================================================
+# Example 4: Polymorphism in a collection of objects
+# ============================================================================
+# Build a list containing different subclasses of Animal.
+# When the loop calls the same sound() method on each item,
+# Python dispatches to the correct subclass implementation for each object.
+animals = [Dog("Jack"), Cat("Whiskers"), Bird("Tweety")]
+for animal in animals:
+    print(animal.sound())
+    # Example outputs:
+    #   Jack barks: woof! woof!! woof!!!
+    #   Whiskers meows: meow! meow!! meow!!!
+    #   Tweety tweets: tweet! tweet!! tweet!!!
