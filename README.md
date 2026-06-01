@@ -28,12 +28,13 @@ Welcome to my Python learning journey! This repository is a comprehensive log of
 | **28 - 29** | System | Standard Library and File Handling |
 | **30** | Error Handling | Try/Except, Finally, and Exception types |
 | **31-32** | OOP | Classes, Objects, __init__, and __str__ |
-| **33** | Advanced-OOP | 4 pillars | Encapsulation, Inheritance, Abstraction and Polymorphism |
+| **33** | Advanced-OOP | 4 pillars | Encapsulation, Inheritance, Abstraction, and Polymorphism with review examples |
 | **34** | JSON_File | Serealize (dump), Deserealize (load) and convert Dict to json String (dumps), and Opposite (loads) |
 | **35** | Virtual environments | `venv`, `pip`, and `requirements.txt` |
 
 ### 🏗️ Object-Oriented Projects
 *   **Space Systems:** 32_planet_class_system.py — An interactive script using OOP to create and validate planetary data.
+*   **Advanced OOP Review:** 33_Advanced-OOP/6_NameMangling.py and 33_Advanced-OOP/7_abstraction.py — examples with explanatory comments and OOP review concepts.
 
 ### 🛠️ Interactive Programs
 
@@ -49,7 +50,7 @@ Detailed review notes are available in `.PDF` format for:
 *   LOOP AND SEQUENCE REVIEW
 *   DICTIONARY AND SET REVIEW
 *   ERROR HANDLING REVIEW
-*   OBJECT-ORIENTED PROGRAMMING REVIEW (Coming Soon)
+*   OBJECT-ORIENTED PROGRAMMING REVIEW — available now as `Object-Oriented-Programming.pdf`
 
 ---
 
