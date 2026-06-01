@@ -85,32 +85,50 @@ animal_sound(
 # • If you have a list of different animals, you can call animal_sound()
 #   on each one without needing separate logic for each animal type
 
-""""Example of Polymorphism with instance and an attribute: 
-    The describe method is defined in both the Car and Bike classes, 
-    but it behaves differently based on the object calling it."""
+# ============================================================================
+# Example 2: Polymorphism with vehicle objects that share describe()
+# ============================================================================
+# The following classes both include a describe() method.
+# The print_description() function can accept either object type and invoke
+# the same method name, demonstrating polymorphic behavior.
 
 
 class Car:
     def __init__(self, make, model):
+        """Initialize a Car object with make and model."""
         self.make = make
         self.model = model
 
     def describe(self):
+        """Return a descriptive string for this Car."""
         return f"This is a {self.make} {self.model} car."
 
 
 class Bike:
     def __init__(self, make, model):
+        """Initialize a Bike object with make and model."""
         self.make = make
         self.model = model
 
     def describe(self):
+        """Return a descriptive string for this Bike."""
         return f"This is a {self.make} {self.model} bike."
 
 
 def print_description(vehicle):
+    """Print the result of calling describe() on the given vehicle."""
     print(vehicle.describe())
 
 
-print_description(Car("Toyota", "Camry"))  # Output: This is a Toyota Camry car.
-print_description(Bike("Giant", "Escape"))  # Output: This is a Giant Escape bike.
+def main():
+    """Run demonstration code when the module is executed directly."""
+    # Demonstrate polymorphism with vehicle objects.
+    car_example = Car("Toyota", "Camry")
+    bike_example = Bike("Giant", "Escape")
+
+    print_description(car_example)  # Output: This is a Toyota Camry car.
+    print_description(bike_example)  # Output: This is a Giant Escape bike.
+
+
+if __name__ == "__main__":
+    main()
