@@ -48,5 +48,3 @@ if is_admin:
     print("You are admin")
 else:
     print("You are not admin")
-
-

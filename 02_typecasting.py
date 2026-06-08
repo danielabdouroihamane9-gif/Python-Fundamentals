@@ -1,4 +1,4 @@
-#3 type casting: the process of converting a variable from one data type to another
+# 3 type casting: the process of converting a variable from one data type to another
 #                 str(), int(), float(), bool()
 name = "Daniel"
 age = 20

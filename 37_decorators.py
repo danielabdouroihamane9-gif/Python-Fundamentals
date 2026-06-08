@@ -1,6 +1,5 @@
 """
-DECORATORS: Quick Reference Guide
-A decorator wraps a function/method to add behavior without changing the original code.
+DECORATORS: A decorator wraps a function/method to add behavior without changing the original code.
 Syntax: @decorator_name
 """
 
